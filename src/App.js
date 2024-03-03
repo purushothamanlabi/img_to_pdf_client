@@ -17,7 +17,7 @@ const App = () => {
     formData.append('image', selectedFile);
 
     try {
-      const response = await fetch('http://localhost:5000/upload', {
+      const response = await fetch('https://img-to-pdf-server.onrender.com/upload', {
         method: 'POST',
         body: formData,
       });
@@ -29,7 +29,7 @@ const App = () => {
 
       console.log(data);
       const downloadLink = document.createElement('a');
-      downloadLink.href = `http://localhost:5000${data.pdfLink}`;
+      downloadLink.href = `https://img-to-pdf-server.onrender.com${data.pdfLink}`;
       
       // Ensure a unique name for the downloaded file
       downloadLink.download = 'downloaded_file.pdf';
